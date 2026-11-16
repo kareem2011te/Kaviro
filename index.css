@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --kaviro-bg-canvas: #f4f7fb;
+    --kaviro-bg-surface: #ffffff;
+    --kaviro-bg-elevated: #eef3fa;
+    --kaviro-border: rgba(15, 23, 42, 0.1);
+    --kaviro-border-accent: rgba(29, 122, 252, 0.28);
+    --kaviro-text-primary: #0b1324;
+    --kaviro-text-muted: #52627a;
+    --kaviro-electric: #1d7afc;
+    --kaviro-cyan: #00b8e6;
+    --kaviro-glow: 0 8px 30px -12px rgba(29, 122, 252, 0.25);
+  }
+
+  .dark {
+    --kaviro-bg-canvas: #040814;
+    --kaviro-bg-surface: #091124;
+    --kaviro-bg-elevated: #0e1934;
+    --kaviro-border: rgba(56, 139, 253, 0.16);
+    --kaviro-border-accent: rgba(0, 212, 255, 0.34);
+    --kaviro-text-primary: #f1f6ff;
+    --kaviro-text-muted: #8ea3c2;
+    --kaviro-electric: #1d7afc;
+    --kaviro-cyan: #00d4ff;
+    --kaviro-glow: 0 12px 36px -14px rgba(0, 212, 255, 0.24);
+  }
+
+  html {
+    font-family: 'DM Sans', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+    scroll-behavior: smooth;
+  }
+
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Plus Jakarta Sans', 'IBM Plex Sans Arabic', system-ui, sans-serif;
+    text-wrap: balance;
+  }
+
+  .font-mono-tabular {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .tabular-nums {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* KAVIRO custom utilities */
+.kaviro-gradient-btn {
+  background: linear-gradient(135deg, #1d7afc 0%, #00b8e6 100%);
+  box-shadow: 0 6px 20px -6px rgba(29, 122, 252, 0.55);
+}
+
+.kaviro-gradient-btn:hover {
+  background: linear-gradient(135deg, #2a85ff 0%, #00d4ff 100%);
+  box-shadow: 0 8px 24px -6px rgba(0, 212, 255, 0.6);
+}
+
+.kaviro-surface {
+  background-color: var(--kaviro-bg-surface);
+  border: 1px solid var(--kaviro-border);
+}
+
+.kaviro-surface-elevated {
+  background-color: var(--kaviro-bg-elevated);
+  border: 1px solid var(--kaviro-border);
+}
+
+.kaviro-glow-card {
+  box-shadow: var(--kaviro-glow);
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(56, 139, 253, 0.25);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 212, 255, 0.45);
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+}

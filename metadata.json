@@ -1,0 +1,8 @@
+{
+  "name": "KAVIRO",
+  "description": "AI-powered team management, onboarding, CV intelligence, skill assessment, real-time messaging, and security operations platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
